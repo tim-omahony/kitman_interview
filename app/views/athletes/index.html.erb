@@ -1,0 +1,20 @@
+<h1>Athletes</h1>
+<% @athletes.each do |athlete| %>
+  <table>
+  <tr>
+    <th>Athlete Number</th> 
+    <th>Athlete Test</th>
+    <th>Test Date</th>
+    <th>Test Value</th>
+  </tr>
+
+  <% athlete.summaries.each do |summary| %>
+    <tr>
+      <td><%= athlete.name %></td>
+      <td><%= athlete.test %></td>
+      <td><%= summary.date[0..9] %></td>
+      <td><%= summary.value %></td>
+    </tr>
+  <% end %> 
+  </table>
+<% end %>
